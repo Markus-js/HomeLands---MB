@@ -1,0 +1,19 @@
+
+// @include center;
+@mixin XY-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin X-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin energyType($color) {
+    background-color: $color;
+    width: 20px;
+    height: 20px;
+    @include XY-center
+  }

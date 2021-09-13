@@ -1,0 +1,40 @@
+@import "./mixins.scss";
+
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  &__card {
+    padding: 20px;
+    border-radius: 5px;
+    border: solid 1px black;
+    &__imgbox {
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+    &__desc {
+      h2 {
+        font-size: 14px;
+      }
+      h3 {
+          font-size: 14px;
+      }
+      p {
+        font-size: 14px;
+      }
+      p:first-of-type {
+        font-weight: bolder;
+      }
+     
+      &__footer {
+        // Energy_type in globals.scss
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

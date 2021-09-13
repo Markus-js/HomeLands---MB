@@ -1,0 +1,14 @@
+@import "../../theme/colors.scss";
+@import "../../theme/mixins.scss";
+
+.review_section {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    
+    article{
+        display: flex;
+        flex-direction: column;
+        background-color: $rose-bg-color;
+    }
+}
