@@ -10,6 +10,7 @@ import { BrowserRouter as Router , Switch, Route, Redirect } from 'react-router-
 
 
 import {AppContextProvider} from './Context/ContextProvider';
+import { HousingSearch } from "./pages/housingSearch/HousingSearch";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
       <Switch>
         <Route path="/frontpage">
           <Frontpage />
+        </Route>
+        <Route path="/housingsearch">
+          <HousingSearch />
         </Route>
         <Route path="/loginpage">
           <LoginPage />
