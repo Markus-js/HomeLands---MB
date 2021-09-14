@@ -1,7 +1,7 @@
 import Style from "../../slider/slider.module.scss";
 import Carousel from "react-material-ui-carousel";
 
-
+  
 export const ModalSlider = ({houseData}) => {
 
   return (

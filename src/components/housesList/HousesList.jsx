@@ -47,8 +47,8 @@ export const HousesList = () => {
                     }
                  
                 return ( 
-                    <Link to={`${url}/${item.id}`}>
-                  <div className={Style.card_container__card} key={item.id}>
+                    <Link key={item.id} to={`${url}/${item.id}`}>
+                  <div className={Style.card_container__card} >
                     <div className={Style.card_container__card__imgbox}>
                       <img
                         src={item.images[0].filename.medium}

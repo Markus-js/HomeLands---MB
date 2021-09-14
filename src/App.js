@@ -11,18 +11,22 @@ import { BrowserRouter as Router , Switch, Route, Redirect } from 'react-router-
 
 import {AppContextProvider} from './Context/ContextProvider';
 import { HousingSearch } from "./pages/housingSearch/HousingSearch";
+import { StaffPage } from "./pages/staffPage/StaffPage";
 
 function App() {
   return (
-    <Layout class="layout-main">
     <AppContextProvider>
     <Router>
+      <Layout class="layout-main">
       <Switch>
         <Route path="/frontpage">
           <Frontpage />
         </Route>
         <Route path="/housingsearch">
           <HousingSearch />
+        </Route>
+        <Route path="/staffpage">
+          <StaffPage />
         </Route>
         <Route path="/loginpage">
           <LoginPage />
@@ -38,9 +42,9 @@ function App() {
           <h2>404 siden findes ikke</h2>
         </Route>
       </Switch>
+    </Layout>
     </Router>
     </AppContextProvider>
-    </Layout>
   );
 }
 

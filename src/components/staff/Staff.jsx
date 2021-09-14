@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { doFetch } from "../../helpers/Fetch";
 import Style from "./staff.module.scss";
 
@@ -21,8 +22,9 @@ export const Staff = () => {
       <div className={Style.card_container}>
         {staff.items.map((s) => {
           return (
+           <Link to={`/staffPage`} key={s.id}>
             <div
-              key={s.id}
+             
               className={Style.card_container__card}
               style={{ backgroundImage: `url(${s.image})` }}
         
@@ -32,6 +34,7 @@ export const Staff = () => {
                     <p>{s.position}</p>
                 </div>
             </div>
+           </Link>
           );
         })}
       </div>
