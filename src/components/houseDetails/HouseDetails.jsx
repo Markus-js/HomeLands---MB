@@ -7,9 +7,13 @@ import floorplan_icon from "../../assets/images/floorplan-icon.svg";
 import location_icon from "../../assets/images/location-icon.svg";
 import heart_icon from "../../assets/images/heart-icon.svg";
 
+import { Modal } from "../modal/Modal";
+
 export const HouseDetails = () => {
   const [houseData, setHouseData] = useState({});
-
+  const [modalToggle, setModalToggle] = useState(true);
+  const [modalType, setModalType] = useState("");
+  
   let { houseId } = useParams();
 
   const getHouseData = async () => {
@@ -21,6 +25,11 @@ export const HouseDetails = () => {
     getHouseData();
   }, []);
   console.log(houseData);
+
+  const handleModal = (type) => {
+      setModalType(type)
+      setModalToggle(true)
+  }
 
   return houseData.item ? (
     <section className={Style.parent_body}>
@@ -39,7 +48,7 @@ export const HouseDetails = () => {
               {houseData.item.zipcode} {houseData.item.city}
             </p>
             <p>
-              {houseData.item.type} | {houseData.item.floor_space}&#x33A1; |{" "}
+              {houseData.item.type} | {houseData.item.floor_space}&#x33A1; |
               {houseData.item.num_rooms} vær
             </p>
             <p>Set {houseData.item.num_clicks} gange</p>
@@ -49,6 +58,7 @@ export const HouseDetails = () => {
               className={
                 Style.details_container__header__information_board__icon
               }
+              onClick={() => {handleModal("photo")}}
             >
               <img src={photo_icon} alt="photos" />
             </div>
@@ -56,6 +66,7 @@ export const HouseDetails = () => {
               className={
                 Style.details_container__header__information_board__icon
               }
+              onClick={() => {handleModal("floorplan")}}
             >
               <img src={floorplan_icon} alt="floorplan" />
             </div>
@@ -63,6 +74,7 @@ export const HouseDetails = () => {
               className={
                 Style.details_container__header__information_board__icon
               }
+              onClick={() => {handleModal("location")}}
             >
               <img src={location_icon} alt="location" />
             </div>
@@ -158,7 +170,7 @@ export const HouseDetails = () => {
               by, skoler og butikker
             </p>
 
-            <p> 
+            <p>
               e højloftede stuer, den megen plads og det herskabelige udtryk er
               bare noget af det, der gør denne villa på Rafns Alle 8 til noget
               ganske særligt. Den 327 kvadratmeter store bolig suppleres af en
@@ -182,15 +194,29 @@ export const HouseDetails = () => {
             </p>
           </article>
           <footer>
-              <h2>Kontakt</h2>
-              <img src={houseData.item.staff.image} alt={houseData.item.staff.firstname+ " " + houseData.item.staff.lastname} />
-              <p><b>{houseData.item.staff.firstname+ " " + houseData.item.staff.lastname}</b></p>
-              <p>{houseData.item.staff.position}</p>
-              <p>Mobil: {houseData.item.staff.phone}</p>
-              <p>Email: {houseData.item.staff.email}</p>
+            <h2>Kontakt</h2>
+            <img
+              src={houseData.item.staff.image}
+              alt={
+                houseData.item.staff.firstname +
+                " " +
+                houseData.item.staff.lastname
+              }
+            />
+            <p>
+              <b>
+                {houseData.item.staff.firstname +
+                  " " +
+                  houseData.item.staff.lastname}
+              </b>
+            </p>
+            <p>{houseData.item.staff.position}</p>
+            <p>Mobil: {houseData.item.staff.phone}</p>
+            <p>Email: {houseData.item.staff.email}</p>
           </footer>
         </section>
       </main>
+      <Modal type={modalType} houseData={houseData} modalToggle={modalToggle} setModalToggle={setModalToggle} />
     </section>
   ) : (
     <p>Siden indlæses...</p>

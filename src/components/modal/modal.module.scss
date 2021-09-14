@@ -1,0 +1,16 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+  }
+  // other modals z-index 10
+  // slider modal z-index 12
+  // layer so that they don´t conflict, when closing
+  .carousel-overlay {
+    z-index: 11;
+  }
