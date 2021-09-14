@@ -52,4 +52,35 @@
       }
     }
   }
+
+
+  .details_container__house_stats {
+  
+    &__box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      
+      &__row {
+        
+        margin: 20px;
+        div {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .details_container__description_section {
+    display: flex;
+      justify-content: space-between;
+    gap: 40px;
+    article {
+      width: 50%;
+    }
+    footer {
+      width: 20%;
+    }
+  }
 }
