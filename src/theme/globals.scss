@@ -64,8 +64,9 @@ img {
 }
 .btn{
   outline: none;
-  border: 1px solid $main-interaction-color;
-  background: $main-interaction-color;
+  color: #fff;
+  border: 1px solid invert($rose-bg-color);
+  background: invert($rose-bg-color);
   cursor: pointer;
   &__header,
   &__cart{

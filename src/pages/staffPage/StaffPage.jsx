@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 import {Staff} from "../../components/staff/Staff"
-import { staffDetails } from "../../components/staffDetails/StaffDetails";
+import { StaffDetails } from "../../components/staffDetails/StaffDetails";
 
 export const StaffPage = () => {
     let { url } = useRouteMatch();
@@ -18,7 +18,7 @@ export const StaffPage = () => {
             </Route>
   
             <Route exact path={`${url}/:name/:staffId`}>
-                <staffDetails />
+                <StaffDetails />
             </Route>
           </Switch>
         </section>

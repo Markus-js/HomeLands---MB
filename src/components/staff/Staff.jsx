@@ -22,7 +22,7 @@ export const Staff = () => {
       <div className={Style.card_container}>
         {staff.items.map((s) => {
           return (
-           <Link to={`/staffPage/${s.id}`} key={s.id}>
+           <Link to={`/staffPage/${s.firstname}/${s.id}`} key={s.id}>
             <div
              
               className={Style.card_container__card}
