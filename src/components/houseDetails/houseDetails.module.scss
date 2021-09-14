@@ -1,0 +1,55 @@
+.parent_body {
+  &__header {
+    width: 100%;
+    &__img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+}
+
+.details_container {
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__house_details {
+    }
+
+    &__house_economics {
+      &__col {
+        display: flex;
+        align-items: center;
+        h2,
+        p {
+          padding: 0;
+          margin: 0;
+        }
+        h2{
+            margin-left: 15px;
+        }
+      }
+    }
+    &__information_board {
+      display: flex;
+      justify-content: space-between;
+      &__icon {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+        border-radius: 50%;
+        border: 1px solid #707070;
+        cursor: pointer;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

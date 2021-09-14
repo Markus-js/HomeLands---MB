@@ -5,11 +5,17 @@ import Style from "../../theme/cards.module.scss";
 import PriceRangeSlider from "../../components/priceRangeSlider/PriceRangeSlider";
 import { Search } from "../../helpers/Search";
 import { SelectHousingType } from "../../components/selectHousingType/SelectHousingType";
+import { Link, useRouteMatch } from "react-router-dom";
+import { useParams } from "react-router";
 
-export const HousingSearch = () => {
+export const HousesList = () => {
   const [housesData, setHousesData] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 5500000]);
   const [housingType, setHousingType] = useState("");
+
+
+  let { url } = useRouteMatch()
+
 
   const gethousesData = async () => {
     const url = "https://api.mediehuset.net/homelands/homes";
@@ -19,7 +25,7 @@ export const HousingSearch = () => {
   useEffect(() => {
     gethousesData();
   }, []);
-  console.log(housesData);
+  
   return (
     <section>
       <p>
@@ -28,6 +34,7 @@ export const HousingSearch = () => {
       <Search />
       <PriceRangeSlider setPriceRange={setPriceRange} />
       <SelectHousingType setHousingType={setHousingType} />
+      
       <div className={Style.card_container}>
         {housesData.items &&
           housesData.items.map((item, i) => {
@@ -39,7 +46,8 @@ export const HousingSearch = () => {
                       return null;
                     }
                  
-                return (
+                return ( 
+                    <Link to={`${url}/${item.id}`}>
                   <div className={Style.card_container__card} key={item.id}>
                     <div className={Style.card_container__card__imgbox}>
                       <img
@@ -66,6 +74,7 @@ export const HousingSearch = () => {
                       </footer>
                     </div>
                   </div>
+              </Link>
                 );
               }
             } else {
