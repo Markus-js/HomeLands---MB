@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { doFetch } from '../../helpers/Fetch';
 
-export const staffDetails = () => {
+export const StaffDetails = () => {
     const [agent, setAgent] = useState({});
     // const [modalToggle, setModalToggle] = useState(true);
     // const [modalType, setModalType] = useState("");
