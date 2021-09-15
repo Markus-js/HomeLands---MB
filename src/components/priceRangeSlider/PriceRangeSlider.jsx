@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
 const PriceRangeSlider = ({setPriceRange}) => {
 
@@ -13,24 +15,42 @@ const rangeSelector = (event, newValue) => {
     setPriceRange(newValue)
 };
 
+const muiTheme = createTheme({
+	overrides:{
+	  MuiSlider: {
+		thumb:{
+		color: "white",
+		border: "1px solid #707070"
+		},
+		track: {
+			height: "1px",
+		  color: '#707070'
+		},
+		rail: {
+			height: "1px",
+		  color: 'grey'
+		}
+	  }
+  }
+  });
+
 return (
 	<div style={{
 	margin: 'auto',
 	display: 'block',
 	width: 'fit-content'
 	}}>
-	<h3>How to create Price Range Selector in ReactJS?</h3>
-	<Typography id="range-slider" gutterBottom>
-		Select Price Range:
-	</Typography>
+	
+	<ThemeProvider theme={muiTheme}>
 	<Slider
 		value={value}
 		onChange={rangeSelector}
-		valueLabelDisplay="auto"
         min={0}
         max={5500000}
 	/>
-	Your range of Price is between {value[0]} /- and {value[1]} /-
+	 </ThemeProvider>
+
+	 <h4>{value[0]}</h4>-----------Fit-Content-----------<h4>{value[1]}</h4>
 	</div>
 );
 }

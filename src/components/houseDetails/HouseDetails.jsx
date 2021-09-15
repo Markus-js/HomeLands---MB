@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { doFetch } from "../../helpers/Fetch";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Style from "./houseDetails.module.scss";
 import photo_icon from "../../assets/images/photo-icon.svg";
 import floorplan_icon from "../../assets/images/floorplan-icon.svg";
@@ -194,6 +195,7 @@ export const HouseDetails = () => {
             </p>
           </article>
           <footer>
+          <Link to={`/staffPage/${houseData.item.staff.firstname}/${houseData.item.staff.id}`}>
             <h2>Kontakt</h2>
             <img
               src={houseData.item.staff.image}
@@ -213,6 +215,7 @@ export const HouseDetails = () => {
             <p>{houseData.item.staff.position}</p>
             <p>Mobil: {houseData.item.staff.phone}</p>
             <p>Email: {houseData.item.staff.email}</p>
+          </Link>
           </footer>
         </section>
       </main>

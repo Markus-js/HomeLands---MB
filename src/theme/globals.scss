@@ -54,8 +54,11 @@ a {
 .D {
   @include energyType(orange)
 }
-.F {
+.E {
   @include energyType(orangered)
+}
+.F {
+  @include energyType(red)
 }
 
 
