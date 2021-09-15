@@ -9,7 +9,7 @@ import Admin from "./pages/admin/Admin"
 import { BrowserRouter as Router , Switch, Route, Redirect } from 'react-router-dom';
 
 
-import {AppContextProvider} from './Context/ContextProvider';
+import {AppContextProvider} from './Context/Context';
 import { HousingSearch } from "./pages/housingSearch/HousingSearch";
 import { StaffPage } from "./pages/staffPage/StaffPage";
 

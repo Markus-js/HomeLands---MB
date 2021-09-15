@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useEffect } from "react/cjs/react.development";
 import LoginInformation from "../../components/LoginInformation/LoginInformation";
 import { doFetch } from "../../helpers/Fetch";
+import { AppContext } from "../../Context/Context";
+
 
 import Style from "./Admin.module.scss";
 
 const Admin = () => {
+  const {loginData, setLoginData} = useContext(AppContext)
     const [productId, setProductId] = useState("");
     const [amount, setAmount] = useState("");
     // const [cart, setCart] = useState([]);

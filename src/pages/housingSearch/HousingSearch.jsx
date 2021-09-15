@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 import { HouseDetails } from "../../components/houseDetails/HouseDetails";
 import { HousesList } from "../../components/housesList/HousesList";
+import { HousesListSearch } from "../../components/housesList/HousesListSearch";
 
 export const HousingSearch = () => {
   let { url } = useRouteMatch();
@@ -20,6 +21,9 @@ export const HousingSearch = () => {
 
           <Route exact path={`${url}/:name/:houseId`}>
             <HouseDetails />
+          </Route>
+          <Route exact path={`${url}/:name/:name/:searchTerm`}>
+            <HousesListSearch />
           </Route>
         </Switch>
       </section>

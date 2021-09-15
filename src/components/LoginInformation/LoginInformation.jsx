@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router";
+import { AppContext } from "../../Context/Context";
 
 const LoginInformation = () => {
+    const {loginData, setLoginData} = useContext(AppContext)
     const [username, setUsername] = useState('');
     const history = useHistory();
 
@@ -14,7 +16,8 @@ const LoginInformation = () => {
 
     const logOut = () => {
         sessionStorage.removeItem('token');
-        history.push('/frontpage')
+        history.push('/frontpage');
+        setLoginData({});
     }
 
 

@@ -1,17 +1,23 @@
 import Style from './LoginForm.module.scss';
 
 import { doFetch } from  "../../helpers/Fetch"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
+import { useSetUserSessionStorage } from '../../hooks/useSetUserSessionStorage';
 
 const LoginForm = () => {
     const [message, setMessage] = useState('');
     const history = useHistory();
+    // Custom hook
+    const [value, setToken] = useSetUserSessionStorage("token", "");
+
+    
 
     let loginData = {
         username: '',
         password: ''
     };
+
 
     const handleUsername = (val) => {
         loginData.username = val
@@ -22,20 +28,22 @@ const LoginForm = () => {
         setMessage('')
     }
 
+
+
+
     const submitForm = async () => {
         let formData = new FormData();
         formData.append('username', loginData.username);
         formData.append('password', loginData.password);
-
         const url = 'https://api.mediehuset.net/token';
-
-        const fetchedData = await doFetch(url, 'POST', formData);
-        handleSessionData(fetchedData)
+        const res = await doFetch(url, 'POST', formData);
+        handleSessionData(res)
     }
 
     const handleSessionData = (data) => {
         if(!data.message) {
-            sessionStorage.setItem('token', JSON.stringify(data));
+            // Custom hook
+            setToken(data) // ==  sessionStorage.setItem('token', JSON.stringify(data));
             setMessage('Du er nu logget Ind')
             history.push('/admin')
         }

@@ -1,15 +1,24 @@
-import React, {useState} from 'react'
+import React, {useState, useContext } from 'react'
 import { doFetch } from './Fetch';
 import Style from "./search.module.scss"
+import { AppContext } from '../Context/Context';
+import { useHistory } from "react-router";
+import {useRouteMatch} from "react-router-dom"
+
 
 export const Search = () => {
+    // Custom hook
+    const {searchResult, setSearchResult} = useContext(AppContext)
     const [searchTerm, setSearchTerm] = useState("")
 
+    const history = useHistory();
+    let { path } = useRouteMatch();
+    
     const getSearchTerm = async () => {
         const url = `https://api.mediehuset.net/homelands/search/${searchTerm}`;
         const res = await doFetch(url);
-        console.log(res)
-       
+        setSearchResult(res)
+        history.push(`${path}/housingsearch/houses/${searchTerm}`)
       };
 
     return (

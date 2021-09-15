@@ -9,13 +9,23 @@ import { useRouteMatch } from "react-router-dom";
 import { HouseListContent } from "./HouseListContent";
 import { AppContext } from "../../Context/Context";
 
-export const HousesList = () => {
-  const [housesData, setHousesData] = useState([]);
+
+
+export const HousesListSearch = () => {
+  const {searchResult, setSearchResult} = useContext(AppContext)
+  const [resetData, setResetData] = useState(false);
   const [priceRange, setPriceRange] = useState([0, 5500000]);
   const [housingType, setHousingType] = useState("");
+ 
+
+  console.log(searchResult)
+console.log(searchResult)
+  
 
 
-
+const handleReset = () => {
+  setResetData(true)
+}
 
 
 
@@ -24,18 +34,9 @@ export const HousesList = () => {
   const pageIdentifier = "LIST_PAGE";
   let { url } = useRouteMatch();
 
-  const gethousesData = async () => {
-    const url = "https://api.mediehuset.net/homelands/homes";
-    const res = await doFetch(url);
-    setHousesData(res);
-  };
-  useEffect(() => {
-    gethousesData()
-  }, []);
-
-
   return (
     <section>
+      <button onClick={() => {handleReset()}} >reset</button>e
       <p>
         {priceRange[0]} /- and {priceRange[1]}
       </p>
@@ -44,8 +45,8 @@ export const HousesList = () => {
       <SelectHousingType setHousingType={setHousingType} />
 
       <div className={Style.card_container}>
-        {housesData.items &&
-          housesData.items.map((item) => {
+        {searchResult.items &&
+          searchResult.items.map((item) => {
             let insulation_grade = item.energy_label_name;
             let price = parseInt(item.price).toFixed();
             if (price > priceRange[0] && price < priceRange[1]) {
