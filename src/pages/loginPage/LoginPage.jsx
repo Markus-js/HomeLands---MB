@@ -1,8 +1,10 @@
-import React from 'react'
-import LoginForm from "../../components/LoginForm/LoginForm"
+import React, {useState} from 'react';
+import { LoginForm } from '../../components/loginForm/LoginForm';
 
-export default function LoginPage() {
+export const Loginpage = () => {
+   
     return (
         <LoginForm />
     )
 }
+

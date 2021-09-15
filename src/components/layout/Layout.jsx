@@ -10,7 +10,7 @@ export const Layout = (props) => {
           <ul>
             <NavLink to="/frontpage">Forside</NavLink>
             <NavLink to="/housingsearch">housingsearch</NavLink>
-            <NavLink to="/loginpage">loginpage</NavLink>
+            <NavLink to="/login">Admin</NavLink>
           </ul>
         </nav>
       </header>

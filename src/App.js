@@ -3,8 +3,8 @@ import "./theme/globals.scss";
 import { Layout } from "./components/layout/Layout";
 // Components
 import {Frontpage} from './pages/frontpage/Frontpage';
-import LoginPage from './pages/loginPage/LoginPage';
-import Admin from "./pages/admin/Admin"
+import { Loginpage } from './pages/Loginpage/Loginpage';
+import { Adminpage } from './pages/Adminpage/Adminpage';
 //
 import { BrowserRouter as Router , Switch, Route, Redirect } from 'react-router-dom';
 
@@ -28,11 +28,11 @@ function App() {
         <Route path="/staffpage">
           <StaffPage />
         </Route>
-        <Route path="/loginpage">
-          <LoginPage />
+        <Route path="/Login">
+          <Loginpage />
         </Route>
-        <Route path="/admin">
-          <Admin />
+        <Route path="/Admin">
+          <Adminpage />
         </Route>
         <Route exact path="/">
           <Redirect to="/frontpage"></Redirect>

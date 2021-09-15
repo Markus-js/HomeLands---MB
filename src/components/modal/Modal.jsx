@@ -2,6 +2,8 @@ import React from "react";
 import {ModalSlider} from "./modalSlider/ModalSlider";
 import { GoogleMaps } from "../googleMaps/GoogleMaps";
 import {Form} from "../form/Form";
+import { Loginpage } from "../../pages/Loginpage/Loginpage";
+import { LoginForm } from "../loginForm/LoginForm";
 
 export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) => {
   
@@ -22,6 +24,7 @@ export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) =
             {type === "floorplan" ? <img src={houseData.item.floorplan} alt="floorplan" /> : null }
             {type === "photo" ? <ModalSlider houseData={houseData} /> : null }
             {type === "location" ? <GoogleMaps houseData={houseData} /> : null }
+            {type === "review_login" ? <LoginForm type={type} /> : null }
           </div>
           <div
             
