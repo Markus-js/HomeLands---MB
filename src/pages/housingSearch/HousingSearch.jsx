@@ -3,13 +3,14 @@ import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 import { HouseDetails } from "../../components/houseDetails/HouseDetails";
 import { HousesList } from "../../components/housesList/HousesList";
 import { HousesListSearch } from "../../components/housesList/HousesListSearch";
+import Style from "./housingSearch.module.scss";
 
 export const HousingSearch = () => {
   let { url } = useRouteMatch();
 
   return (
     <>
-      <section>
+      <section >
         <Switch>
           <Route exact path={url}>
             <Redirect to={`${url}/houses`} />

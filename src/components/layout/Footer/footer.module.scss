@@ -8,6 +8,9 @@
   background: black;
   color: #fff;
   padding: 0 5%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   h3 {
     font-size: clamp(1.5rem, 5.5vw, 2.5rem);
     font-weight: 300;
@@ -35,6 +38,7 @@
     }
   }
 }
+
 
 @media only screen and (max-width: $breakpoint-sm) {
     .footer {

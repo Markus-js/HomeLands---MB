@@ -36,7 +36,7 @@
     left: 15%;
     background: $golden-color;
     padding: 20px;
-    
+    cursor: pointer;
     h1 {
       z-index: 999;
       margin: 0;
@@ -107,9 +107,9 @@
 .toggle {
   z-index: 999999;
   position: fixed;
-  top: 6%;
+  top: 5.5%;
   right: 6%;
-  color: #fff;
+  font-size: 20px;
   display: none;
 }
 

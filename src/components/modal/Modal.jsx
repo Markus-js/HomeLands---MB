@@ -4,6 +4,7 @@ import { GoogleMaps } from "../googleMaps/GoogleMaps";
 import {Form} from "../form/Form";
 import { LoginForm } from "../loginForm/LoginForm";
 import { AppContext } from "../../Context/Context";
+import Style from "./modal.module.scss";
 
 export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) => {
   const { loginData, setLoginData } = useContext(AppContext);
@@ -20,7 +21,12 @@ export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) =
     <div>
       {modalToggle && type !== "" ? (
         <div>
-          <div className="modalContainer"> 
+          <div className={Style.modal_container}> 
+          <span className={Style.close} onClick={() => {
+              handleExit();
+            }}>
+          &#10005;
+          </span>
           {type === "agent" ? <Form agent={agent} setModalToggle={setModalToggle} /> : null }
             {type === "floorplan" ? <img src={houseData.item.floorplan} alt="floorplan" /> : null }
             {type === "photo" ? <ModalSlider houseData={houseData} /> : null }
@@ -34,7 +40,7 @@ export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) =
             onClick={() => {
               handleExit();
             }}
-            className="overlay"
+            className={Style.overlay}
           ></div>
         </div>
       ): null }

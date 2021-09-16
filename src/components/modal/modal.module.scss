@@ -1,3 +1,11 @@
+
+  // // other modals z-index 10
+  // // slider modal z-index 12
+  // // layer so that they don´t conflict, when closing
+  // .carousel-overlay {
+  //   z-index: 11;
+  // }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -8,9 +16,52 @@
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(2px);
   }
-  // other modals z-index 10
-  // slider modal z-index 12
-  // layer so that they don´t conflict, when closing
-  .carousel-overlay {
-    z-index: 11;
+
+// Global CSS for both modals. modalContainer, header
+.modal_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  //!!!!
+  width: 70%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  .header {
+    .close--small {
+      display: none;
+      cursor: pointer;
+      z-index: 14;
+    }
+    background: #fff;
+    h3 {
+      margin: 0;
+      padding: 22px 56px;
+      color: #fff;
+      font-size: 36px;
+    }
   }
+  .true {
+    display: flex;
+  }
+
+  .false {
+    display: none;
+  }
+  
+    .close {
+      position: absolute;
+      top: 0;
+      left: 102%;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+  
+}

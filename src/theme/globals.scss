@@ -8,13 +8,18 @@
 *::after {
   box-sizing: border-box;
 }
-
+html {
+  position: relative;
+}
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: apple-system , BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  // compensate from Navigation    
+  margin-top: 10vh;
 
 }
 h1, 
@@ -25,7 +30,10 @@ h4 {
 .title {
   text-align: center;
 }
-p{}
+p{
+  color: $main-text-color;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); 
+}
 
 span{
   cursor: pointer;
@@ -60,31 +68,24 @@ a {
 .F {
   @include energyType(red)
 }
-
+.A,.B,.C,.D,.E,.F {
+  color: $white-color;
+}
 
 img {
   max-width: 100%;
 }
 .btn{
   max-width: 100px;
+  z-index: 100;
   outline: none;
   color: #fff;
-  border: 1px solid invert($rose-bg-color);
-  background: invert($rose-bg-color);
+  border: 1px solid $btn-color;
+  background: $btn-color;
   cursor: pointer;
-  &__header,
-  &__cart{
-    border-radius: 5%;
-  }
-  &__cart{
-    background: $main-btn-color;
-    border: 1px solid $main-btn-color;
-    color: #fff;
-  }
 }
 input {
   border: 1px solid $main-interaction-box-border-color;
-  background-color: #0A1D1C;
   color: $main-interaction-color;
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $main-interaction-color;
@@ -120,36 +121,3 @@ input {
   z-index: 11;
 }
 
-// Global CSS for both modals. modalContainer, header
-.modalContainer {
-  background: #fff;
-  position: absolute;
-  //!!!!
-  width: 70%;
-  // TOP 50% !! FIX MODAL so that it fill 100% of body
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  .header {
-    .close--small {
-      display: none;
-      cursor: pointer;
-      z-index: 14;
-    }
-    background: #fff;
-    h3 {
-      margin: 0;
-      padding: 22px 56px;
-      color: #fff;
-      font-size: 36px;
-    }
-  }
-  .true {
-    display: flex;
-  }
-
-  .false {
-    display: none;
-  }
-}

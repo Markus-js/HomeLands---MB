@@ -39,7 +39,7 @@ export const HouseListContent = ({ item, insulation_grade, url, pageIdentifier})
             <p>
               {item.zipcode} {item.city}
             </p>
-            <p>{item.type} </p>
+            <p >{item.type} </p>
             <footer
               className={Style.card_container__card__desc__footer}
             >

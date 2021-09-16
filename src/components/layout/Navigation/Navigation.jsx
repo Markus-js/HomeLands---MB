@@ -47,7 +47,7 @@ export const Navigation = () => {
             handleToggle();
           }}
         >
-          X
+            &#10005;
         </span>
       </div>
       {/* Mobile $Breakpoint-sm */}

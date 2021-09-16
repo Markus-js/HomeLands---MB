@@ -37,9 +37,14 @@ const handleClick = () => {
   return agent.item ? (
      <> 
     <section className={Style.agent_section}>
-      <button className="btn" onClick={handleClick}>Tilbage til ansatte</button>
+      <img
+          className={Style.agent}
+          src={agent.item.image}
+          alt={agent.item.firstname}
+        />
       <header>
        <main>
+      <button className="btn" onClick={handleClick}>Tilbage til ansatte</button>
        <h1>
           {agent.item.firstname} {agent.item.lastname}
         </h1>
@@ -56,16 +61,11 @@ const handleClick = () => {
        </main>
       </header>
       <footer>
-        <img
-          className={Style.agent}
-          src={agent.item.image}
-          alt={agent.item.firstname}
-        />
         <div className={Style.contact_info}>
           <h2>Skriv eller ring til mig</h2>
           <p>Så tager vi en uforpligtende snak om jeres behov</p>
         </div>
-        <div>
+        <div className={Style.box} >
           <figure>
             <img src={mobile_icon} alt="phone" />
             <div>

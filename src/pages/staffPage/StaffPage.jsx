@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-import {Staff} from "../../components/staff/Staff"
+import {StaffList} from "../../components/staff/StaffList"
 import { StaffDetails } from "../../components/staffDetails/StaffDetails";
 
 export const StaffPage = () => {
@@ -14,7 +14,7 @@ export const StaffPage = () => {
             </Route>
   
             <Route exact path={`${url}/:name`}>
-            <Staff />
+            <StaffList />
             </Route>
   
             <Route exact path={`${url}/:name/:staffId`}>
