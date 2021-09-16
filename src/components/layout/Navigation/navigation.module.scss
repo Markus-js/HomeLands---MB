@@ -1,0 +1,128 @@
+@import "../../../theme/colors.scss";
+@import "../../../theme/fonts.scss";
+@import "../../../theme/breakpoints.scss";
+
+
+
+// DESKTOP
+.desktop {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  height: 110px;
+  width: 100%;
+  &::before {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    content: "";
+    clip-path: polygon(100% 0, 100% 100%, 30% 60%, 0 100%, 0 0);
+    background: hsl(0, 0%, 0%);
+  }
+  &__mobile {
+    display: none;
+  }
+  .logo_container {
+    border-radius: 2px;
+    display: block;
+    margin: 0;
+    z-index: 999;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    background: $golden-color;
+    padding: 20px;
+    
+    h1 {
+      z-index: 999;
+      margin: 0;
+      font-family: $font-logo;
+      color: #fff;
+      z-index: 10;
+      font-size: clamp(1.5rem, 5.5vw, 2.5rem); 
+    }
+  }
+  &__nav {
+    z-index: 999;
+    &__ul {
+      z-index: 999;
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+      align-items: center;
+
+      li {
+        z-index: 999;
+        font-size: 20px;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+// MOBILE
+.mobile {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 100%;
+  background: $rose-bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__nav {
+    z-index: 999;
+    
+    &__ul {
+      :last-child {
+        padding-top: 20px;
+      }
+      display: flex;
+      flex-direction: column;
+      z-index: 999;
+      list-style-type: none;
+      align-items: center;
+      li {
+        z-index: 999;
+        font-size: 26px;
+        padding: 15px 15px;
+        .link {
+          color: $golden-color;
+        }
+      }
+    }
+  }
+}
+
+// BOTH
+.selected {
+  font-weight: bold;
+  color: $golden-color;
+}
+.toggle {
+  z-index: 999999;
+  position: fixed;
+  top: 6%;
+  right: 6%;
+  color: #fff;
+  display: none;
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .desktop {
+    &__nav {
+      display: none;
+    }
+    &::before {
+      clip-path: none;
+    }
+  }
+  .toggle {
+    display: block;
+  }
+}

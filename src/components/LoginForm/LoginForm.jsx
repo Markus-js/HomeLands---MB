@@ -16,7 +16,6 @@ export const LoginForm = ({type}) => {
     const { loginData, setLoginData } = useContext(AppContext);
     const [value, setValue] = useSetUserSessionStorage("token", "")
 
-    console.log(loginData)
     const history = useHistory();
 
     let formLoginData = {
@@ -28,7 +27,7 @@ export const LoginForm = ({type}) => {
         formLoginData.username = val
         setMessage('')
     }
-    const handlePassword = (val) => {
+   const handlePassword = (val) => {    
         formLoginData.password = val
         setMessage('')
     }
@@ -47,13 +46,11 @@ export const LoginForm = ({type}) => {
     const handleSessionData = (data) => {
         if(!data.message) {
             // Custom Hook
-            setValue(data) // === sessionStorage.setItem('token', JSON.stringify(data));
+            // setValue(data) // === sessionStorage.setItem('token', JSON.stringify(data));
             setMessage('Du er nu logget Ind')
             setLoginData(data)
                 // Where to link
-                if(!type === "review_login") {
-                    history.push('/Admin')
-                }
+                history.push('/Admin')
                 if(type === "review_login") {
                     history.push('/frontpage')
                 }

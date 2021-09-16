@@ -1,4 +1,4 @@
- 
+ @import "../../theme/colors.scss";
 
 
 
@@ -8,9 +8,9 @@
   gap: 20px;
  
   &__card {
+    height: 100%;
     position: relative;
     padding: 20px;
-  
     &__imgbox {
       img {
         width: 100%;
@@ -52,6 +52,6 @@
   transition: all .2s ease-in-out;
   &:hover {
     transform: scale(1.02);
-    
+    background: $purple-hover-color;
   }
 }

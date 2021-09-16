@@ -53,7 +53,8 @@ export const Reviews = () => {
     setModalToggle(true)
   }
 
-  return review.length > 2 && count >= 0 ? (
+  // > length 
+  return review.length > 0 && count >= 0 ? (
     <section className={Style.review_section}>
       <h2 className="title  ">Det siger kunderne:</h2>
       <article>
@@ -71,7 +72,7 @@ export const Reviews = () => {
         </footer>
         {/* If user_id */}
         {loginData.user_id ? (
-          <button className="btn" onClick={() => {handleModal("kommentar")}}>Skriv kommentar</button>
+          <button className="btn" onClick={() => {handleModal("review_kommentar")}}>Skriv kommentar</button>
         ) : (
           <button className="btn" onClick={() => {handleModal("review_login")}}>Login for at skrive en kommentar</button>
         )}

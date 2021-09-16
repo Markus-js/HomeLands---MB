@@ -12,7 +12,7 @@ const AppContextProvider = ({children}) => {
     //  // first lifecycle => Set loginData to sessionStorage Token/User if it exist
     //  const settingLoginData = () => {
     //     const data = JSON.parse(sessionStorage.getItem('token'));
-    //     if(!loginData.user_id) {
+    //     if(!loginData.user_id) {  
     //         if(data && data.user_id) {
     //             setLoginData(data);
     //         }
@@ -20,11 +20,9 @@ const AppContextProvider = ({children}) => {
     // };
 
     useEffect(() => {
-        
         // settingLoginData();
-    }, [loginData]);
+    }, []);
 
-    console.log(loginData)  
 
     return (
         <AppContext.Provider

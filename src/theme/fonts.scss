@@ -1,3 +1,6 @@
+// External
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+// Local
 @font-face {
   font-family: "Odibee Sans";
   src: url("../assets/fonts/OdibeeSans/OdibeeSans-Regular.ttf");
@@ -6,5 +9,6 @@
   font-display: swap;
 }
 
+// Fonts
 $font-logo: 'Odibee Sans';
 $font-main: 'Trebuchet MS';
