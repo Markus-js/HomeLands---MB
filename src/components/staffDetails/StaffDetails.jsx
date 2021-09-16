@@ -44,7 +44,7 @@ const handleClick = () => {
         />
       <header>
        <main>
-      <button className="btn" onClick={handleClick}>Tilbage til ansatte</button>
+      <button className="btn" onClick={handleClick}>Ansatte</button>
        <h1>
           {agent.item.firstname} {agent.item.lastname}
         </h1>

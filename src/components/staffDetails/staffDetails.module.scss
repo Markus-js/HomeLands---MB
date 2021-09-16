@@ -64,8 +64,8 @@
         img {
           width: auto;
           height: 100%;
-          max-width: 80px;
-          max-height: 80px;
+          max-width: 50px;
+          max-height: 50px;
         }
         div {
           flex-direction: column;
@@ -85,9 +85,9 @@
 @media only screen and (max-width: $breakpoint-sm) {
   .agent_section {
     height: 100%;
-    margin-bottom: 20vh;
+    margin-bottom: 0vh;
     .agent {
-      bottom: 20%;
+      bottom: 40%;
       right: 0;
       width: 300px;
       opacity: 20%;
@@ -102,6 +102,7 @@
     }
    
   footer {
+    display: none;
     position: fixed;
     padding: 0 0 0 0;
     flex-direction: column;

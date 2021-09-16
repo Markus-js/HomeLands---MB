@@ -14,7 +14,7 @@ export const HouseDetails = () => {
   const [houseData, setHouseData] = useState({});
   const [modalToggle, setModalToggle] = useState(true);
   const [modalType, setModalType] = useState("");
-  
+
   let { houseId } = useParams();
 
   const getHouseData = async () => {
@@ -28,9 +28,9 @@ export const HouseDetails = () => {
   console.log(houseData);
 
   const handleModal = (type) => {
-      setModalType(type)
-      setModalToggle(true)
-  }
+    setModalType(type);
+    setModalToggle(true);
+  };
 
   return houseData.item ? (
     <section className={Style.parent_body}>
@@ -59,7 +59,9 @@ export const HouseDetails = () => {
               className={
                 Style.details_container__header__information_board__icon
               }
-              onClick={() => {handleModal("photo")}}
+              onClick={() => {
+                handleModal("photo");
+              }}
             >
               <img src={photo_icon} alt="photos" />
             </div>
@@ -67,7 +69,9 @@ export const HouseDetails = () => {
               className={
                 Style.details_container__header__information_board__icon
               }
-              onClick={() => {handleModal("floorplan")}}
+              onClick={() => {
+                handleModal("floorplan");
+              }}
             >
               <img src={floorplan_icon} alt="floorplan" />
             </div>
@@ -75,7 +79,9 @@ export const HouseDetails = () => {
               className={
                 Style.details_container__header__information_board__icon
               }
-              onClick={() => {handleModal("location")}}
+              onClick={() => {
+                handleModal("location");
+              }}
             >
               <img src={location_icon} alt="location" />
             </div>
@@ -195,31 +201,47 @@ export const HouseDetails = () => {
             </p>
           </article>
           <footer>
-          <Link to={`/staffPage/${houseData.item.staff.firstname}/${houseData.item.staff.id}`}>
-            <h2>Kontakt</h2>
-            <img
-              src={houseData.item.staff.image}
-              alt={
-                houseData.item.staff.firstname +
-                " " +
-                houseData.item.staff.lastname
-              }
-            />
-            <p>
-              <b>
-                {houseData.item.staff.firstname +
-                  " " +
-                  houseData.item.staff.lastname}
-              </b>
-            </p>
-            <p>{houseData.item.staff.position}</p>
-            <p>Mobil: {houseData.item.staff.phone}</p>
-            <p>Email: {houseData.item.staff.email}</p>
-          </Link>
+            <Link
+              className={Style.link}
+              to={`/staffPage/${houseData.item.staff.firstname}/${houseData.item.staff.id}`}
+            >
+              <div>
+                {" "}
+                <h2>Kontakt</h2>
+                <button className="btn">Om {houseData.item.staff.firstname}</button>
+              </div>
+              <div className={Style.img_box}>
+                <img
+                  src={houseData.item.staff.image}
+                  alt={
+                    houseData.item.staff.firstname +
+                    " " +
+                    houseData.item.staff.lastname
+                  }
+                />
+              </div>
+              <div>
+                <p>
+                  <b>
+                    {houseData.item.staff.firstname +
+                      " " +
+                      houseData.item.staff.lastname}
+                  </b>
+                </p>
+                <p>{houseData.item.staff.position}</p>
+                <p>Mobil: {houseData.item.staff.phone}</p>
+                <p>Email: {houseData.item.staff.email}</p>
+              </div>
+            </Link>
           </footer>
         </section>
       </main>
-      <Modal type={modalType} houseData={houseData} modalToggle={modalToggle} setModalToggle={setModalToggle} />
+      <Modal
+        type={modalType}
+        houseData={houseData}
+        modalToggle={modalToggle}
+        setModalToggle={setModalToggle}
+      />
     </section>
   ) : (
     <p>Siden indlæses...</p>
