@@ -8,7 +8,7 @@ import { NavigationMobile } from "./NavigationMobile";
 
 export const Navigation = () => {
   const { loginData } = useContext(AppContext);
-  const [toggle, setToggle] = useState(false);
+  const {toggle, setToggle} = useContext(AppContext)
   const history = useHistory();
 
   const navigationData = {

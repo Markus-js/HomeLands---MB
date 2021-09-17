@@ -1,3 +1,13 @@
 .loginForm {
-    height: 100vh;
+    margin: 5vw;
+    span {
+        display: flex;
+        flex-direction: column;
+        :last-child {
+            margin-top: 20px;
+        }
+        .loginForm_input {
+            width: 50%;
+        }
+    }
 }

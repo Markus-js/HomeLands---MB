@@ -23,9 +23,9 @@ export const HousingSearch = () => {
           <Route exact path={`${url}/:name/:houseId`}>
             <HouseDetails />
           </Route>
-          <Route exact path={`${url}/:name/:name/:searchTerm`}>
+          {/* <Route exact path={"/seachpage"}>
             <HousesListSearch />
-          </Route>
+          </Route> */}
         </Switch>
       </section>
     </>

@@ -5,6 +5,7 @@ import { doFetch } from '../../helpers/Fetch';
 import { AppContext } from '../../Context/Context';
 import { useHistory } from 'react-router';
 import { useSetUserSessionStorage } from '../../hooks/useSetUserSessionStorage';
+import { ClearFix } from '../ClearFix/ClearFix';
 
 // Prop => type drilled from = Reviews => Modal => this 
 // LoginForm component is used on both LoginPage and Reviews
@@ -71,17 +72,18 @@ export const LoginForm = ({type}) => {
 
     return (
         <form className={Style.loginForm}>
-            <h2 className={Style.loginForm_h2}>Login</h2>
-            <p className={Style.loginForm_p} >Indtast dit brugernavn og adgangskode for at logge ind</p>
-            <span className={Style.column}>
-                <input className={Style.loginForm_input} type="text" placeholder="Brugernavn" onKeyUp={(e) => {handleUsername(e.currentTarget.value)}}/> 
-                <input className={Style.loginForm_input} type="password" placeholder="Adgangskode" onKeyUp={(e) => {handlePassword(e.currentTarget.value)}}/> 
+            <h2>Login</h2>
+            <p >Indtast dit brugernavn og adgangskode for at logge ind</p>
+            <span>
+                <input  type="text" placeholder="Brugernavn" onKeyUp={(e) => {handleUsername(e.currentTarget.value)}}/> 
+                <input  type="password" placeholder="Adgangskode" onKeyUp={(e) => {handlePassword(e.currentTarget.value)}}/> 
             </span>
             {message}
-            <div className={Style.loginForm_div}>
-                <button type="button" className={Style.loginForm_button} onClick={submitForm}>Login</button>
+            <div >
+                <button type="button" className="btn btn--login" onClick={submitForm}>Login</button>
            
             </div>
+        
         </form>
     )
 }

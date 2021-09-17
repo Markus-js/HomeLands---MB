@@ -1,4 +1,4 @@
-import Style from "../../slider/slider.module.scss";
+import Style from "./modalSlider.module.scss";
 import Carousel from "react-material-ui-carousel";
 
   

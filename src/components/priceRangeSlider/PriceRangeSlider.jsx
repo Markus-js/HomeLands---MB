@@ -38,7 +38,7 @@ return (
 	<div style={{
 	margin: 'auto',
 	display: 'block',
-	width: 'fit-content'
+	width: '180px'
 	}}>
 	
 	<ThemeProvider theme={muiTheme}>
@@ -50,7 +50,7 @@ return (
 	/>
 	 </ThemeProvider>
 
-	 <h4>{value[0]}</h4>-----------Fit-Content-----------<h4>{value[1]}</h4>
+	
 	</div>
 );
 }

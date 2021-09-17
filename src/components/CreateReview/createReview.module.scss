@@ -1,0 +1,13 @@
+.createReview {
+    margin-bottom: 20px;
+    span {
+        display: flex;
+        flex-direction: row;
+        :last-child {
+            margin-top: 20px;
+        }
+       button{
+           margin-right: 10px;
+       }
+    }
+}

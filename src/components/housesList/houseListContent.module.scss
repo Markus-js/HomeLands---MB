@@ -1,11 +1,29 @@
 @import "../../theme/colors.scss";
 @import "../../theme/breakpoints.scss";
 
+.header {
+  display: flex;
+  align-items: center;
+  align-content: flex-end;
+  justify-content: flex-end;
+  height: 20px;
+  margin: 5vw;
+  h2 {
+    position: absolute;
+    left: 5vw;
+  }
+  .range {
+    padding-top: 8px;
+    margin: 0 40px;
+  }
+  
+}
 .card_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   color: #fff;
+  
   margin:  5vw;
   &__card {
     height: 100%;
@@ -32,7 +50,7 @@
         margin: 0;
       }
       p {
-        font-size: clamp(1rem, 1.5vw, 2rem);
+       
         margin: 0;
         margin-top: 5px;
       }
@@ -45,6 +63,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        h3 {
+          color: #333;
+
+        }
       }
     }
   }
@@ -64,10 +87,44 @@
   }
 }
 
+@media only screen and (max-width: 1180px) {
+  .card_container {
+      grid-template-columns: repeat(2, 1fr);
+      margin:  5vw;
+      &__card {
+        &__imgbox {
+          img {
+            width: 100%;
+            height: 100px;
+            min-height: 200px;
+            max-height: 300px;
+          }
+        }
+      }
+  }
+}
+
 @media only screen and (max-width: $breakpoint-sm) {
   .card_container {
-    grid-template-columns: repeat(2, 1fr) ;
     margin: 5vw;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: flex-end;
+    height: 20px;
+    margin: 5vw;
+    h2 {
+      position: absolute;
+      left: 5vw;
+    }
+    .range {
+      padding-top: 8px;
+      margin: 0 0;
+    }
+    
   }
 }
 

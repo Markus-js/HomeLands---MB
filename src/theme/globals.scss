@@ -25,14 +25,17 @@ body {
 h1, 
 h2,
 h3,
-h4 {
+h4,
+h5 {
+  font-family: $font-main;
 }
 .title {
   text-align: center;
 }
 p{
   color: $main-text-color;
-  font-size: clamp(1rem, 2.5vw, 1.2rem); 
+  font-size: clamp(0.8rem, 2.5vw, 1rem); 
+  font-family: $font-main;
 }
 
 span{
@@ -41,9 +44,25 @@ span{
 a {
   color: inherit;
   text-decoration: none;
-  color: $main-text-color;
- 
+  color: white;
 }
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: red;
+}
+.sm {
+  margin-bottom: 10vh;
+}
+.md {
+  margin-bottom: 50vh;
+}
+.lg {
+  margin-bottom: 90vh;
+}
+
+
 // @mixin energyType($color) {
 //   background-color: $color;
 //   width: 20px;
@@ -76,29 +95,37 @@ img {
   max-width: 100%;
 }
 .btn{
-  max-width: 100px;
-  z-index: 100;
+  padding: 20px 10px;
+  border-radius: 3px;
   outline: none;
   color: #fff;
   border: 1px solid $btn-color;
   background: $btn-color;
   cursor: pointer;
+  &--reviews {
+    max-width: 250px;
+    display: flex;
+    margin: 0 auto;
+  }
+  &--login {
+    margin-top: 20px;
+    width: 100px;
+  }
+  &--admin {
+    padding: 10px ;
+    width: 100px;
+    margin-right: 10px;
+  }
 }
-input {
-  border: 1px solid $main-interaction-box-border-color;
-  color: $main-interaction-color;
-  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $main-interaction-color;
-  }
-  &::-moz-placeholder { /* Firefox 19+ */
-    color: $main-interaction-color;
-  }
-  &:-ms-input-placeholder { /* IE 10+ */
-    color: $main-interaction-color;
-  }
-  &:-moz-placeholder { /* Firefox 18- */
-    color: $main-interaction-color;
-  }
+input, textarea {
+  border: 1px solid rgba(160, 160, 160, 0.281);
+  background-color: #fff !important;
+  outline: none;
+  padding: 11px;
+}
+textarea {
+  max-height: 50px;
+  width: 338px;
 }
 
 

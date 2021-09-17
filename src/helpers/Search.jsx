@@ -8,17 +8,18 @@ import {useRouteMatch} from "react-router-dom"
 
 export const Search = () => {
     // Custom hook
-    const {searchResult, setSearchResult} = useContext(AppContext)
+    const { setSearchResult, setToggle} = useContext(AppContext)
     const [searchTerm, setSearchTerm] = useState("")
 
     const history = useHistory();
-    let { path } = useRouteMatch();
+    
     
     const getSearchTerm = async () => {
         const url = `https://api.mediehuset.net/homelands/search/${searchTerm}`;
         const res = await doFetch(url);
         setSearchResult(res)
-        history.push(`${path}/housingsearch/houses/${searchTerm}`)
+        setToggle(false)
+            history.push('/seachpage');
       };
 
     return (

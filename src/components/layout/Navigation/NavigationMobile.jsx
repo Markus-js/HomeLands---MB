@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import Style from "./navigation.module.scss";
 import { Search } from "../../../helpers/Search";
+import { AppContext } from "../../../Context/Context";
 
-export const NavigationMobile = ({ setToggle, navigationData }) => {
+export const NavigationMobile = ({ navigationData }) => {
+  const {setToggle} = useContext(AppContext)
 
   const handleClose = () => {
     setToggle(false);

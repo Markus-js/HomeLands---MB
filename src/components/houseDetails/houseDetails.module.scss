@@ -126,6 +126,7 @@
 
 @media only screen and (max-width: $breakpoint-xs) {
   .parent_body {
+    padding-bottom: 0;
     .details_container {
       margin-bottom: 35vw;
 
@@ -168,6 +169,7 @@
       }
     }
     .details_container__description_section {
+      margin-bottom: 10vh;
       display: block;
       justify-content: space-between;
       gap: 40px;
@@ -185,7 +187,7 @@
           justify-content: space-between;
         }
         .img_box {
-          width: 80px;
+          width: 500;
           height: auto;
           img {
             object-fit: contain;

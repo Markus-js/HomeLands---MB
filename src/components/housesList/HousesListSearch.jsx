@@ -3,29 +3,22 @@ import { doFetch } from "../../helpers/Fetch";
 import Style from "./houseListContent.module.scss";
 
 import PriceRangeSlider from "../../components/priceRangeSlider/PriceRangeSlider";
-import { Search } from "../../helpers/Search";
 import { SelectHousingType } from "../../components/selectHousingType/SelectHousingType";
 import { useRouteMatch } from "react-router-dom";
 import { HouseListContent } from "./HouseListContent";
 import { AppContext } from "../../Context/Context";
+import { ClearFix } from "../../components/ClearFix/ClearFix"
 
 
 
 export const HousesListSearch = () => {
-  const {searchResult, setSearchResult} = useContext(AppContext)
-  const [resetData, setResetData] = useState(false);
+  const {searchResult} = useContext(AppContext)
   const [priceRange, setPriceRange] = useState([0, 5500000]);
   const [housingType, setHousingType] = useState("");
  
 
-  console.log(searchResult)
-console.log(searchResult)
-  
 
 
-const handleReset = () => {
-  setResetData(true)
-}
 
 
 
@@ -34,16 +27,23 @@ const handleReset = () => {
   const pageIdentifier = "LIST_PAGE";
   let { url } = useRouteMatch();
 
-  return (
+  return searchResult  ? (
+    <>
     <section>
-      <button onClick={() => {handleReset()}} >reset</button>e
-      <p>
-        {priceRange[0]} /- and {priceRange[1]}
-      </p>
-      <Search />
-      <PriceRangeSlider setPriceRange={setPriceRange} />
-      <SelectHousingType setHousingType={setHousingType} />
-
+      <header className={Style.header}>
+        <h2>Boliger til salg</h2>
+        <p>
+          {priceRange[0] > 10 || priceRange[1] < 5500000
+            ? `${priceRange[0]} - ${priceRange[1]}`
+            : "Sorter efter prisniveau"}
+        </p>
+        <div className={Style.range}>
+          <PriceRangeSlider setPriceRange={setPriceRange} />
+        </div>
+        <div className={Style.select}>
+          <SelectHousingType setHousingType={setHousingType} />
+        </div>
+      </header>
       <div className={Style.card_container}>
         {searchResult.items &&
           searchResult.items.map((item) => {
@@ -101,6 +101,9 @@ const handleReset = () => {
             }
           })}
       </div>
+    
     </section>
-  );
+      <ClearFix height="lg" /> 
+    </>
+  ) :  null;
 };

@@ -32,7 +32,7 @@
     margin: 0;
     z-index: 999;
     position: absolute;
-    top: 15%;
+    top: 13%;
     left: 15%;
     background: $golden-color;
     padding: 20px;
@@ -48,6 +48,7 @@
   }
   &__nav {
     z-index: 999;
+    margin-right: 5vw;
     &__ul {
       z-index: 999;
       display: flex;
@@ -121,8 +122,13 @@
     &::before {
       clip-path: none;
     }
+    .logo_container {
+      top: 13%;
+      left: 5%;
+    }
   }
   .toggle {
     display: block;
   }
+  
 }

@@ -1,23 +1,17 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { doFetch } from "../../helpers/Fetch";
 import Style from "./houseListContent.module.scss";
 
 import PriceRangeSlider from "../../components/priceRangeSlider/PriceRangeSlider";
-import { Search } from "../../helpers/Search";
 import { SelectHousingType } from "../../components/selectHousingType/SelectHousingType";
 import { useRouteMatch } from "react-router-dom";
 import { HouseListContent } from "./HouseListContent";
-import { AppContext } from "../../Context/Context";
+import { ClearFix } from "../../components/ClearFix/ClearFix"
 
 export const HousesList = () => {
   const [housesData, setHousesData] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 5500000]);
   const [housingType, setHousingType] = useState("");
-
-
-
-
-
 
   // Bliver sendt med som prop => HouseListContent,
   // hvor der bliver målt på om linkes fra Front-page || House-list
@@ -30,18 +24,26 @@ export const HousesList = () => {
     setHousesData(res);
   };
   useEffect(() => {
-    gethousesData()
+    gethousesData();
   }, []);
 
-
   return (
+    <>
     <section>
-      <p>
-        {priceRange[0]} /- and {priceRange[1]}
-      </p>
-      <Search />
-      <PriceRangeSlider setPriceRange={setPriceRange} />
-      <SelectHousingType setHousingType={setHousingType} />
+      <header className={Style.header}>
+        <h2>Boliger til salg</h2>
+        <p>
+          {priceRange[0] > 10 || priceRange[1] < 5500000
+            ? `${priceRange[0]} - ${priceRange[1]}`
+            : "Sorter efter prisniveau"}
+        </p>
+        <div className={Style.range}>
+          <PriceRangeSlider setPriceRange={setPriceRange} />
+        </div>
+        <div className={Style.select}>
+          <SelectHousingType setHousingType={setHousingType} />
+        </div>
+      </header>
 
       <div className={Style.card_container}>
         {housesData.items &&
@@ -100,6 +102,9 @@ export const HousesList = () => {
             }
           })}
       </div>
+     
     </section>
+     <ClearFix height="md" />
+    </>
   );
 };

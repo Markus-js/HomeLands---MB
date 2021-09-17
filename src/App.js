@@ -12,6 +12,7 @@ import { BrowserRouter as Router , Switch, Route, Redirect } from 'react-router-
 import {AppContextProvider} from './Context/Context';
 import { HousingSearch } from "./pages/housingSearch/HousingSearch";
 import { StaffPage } from "./pages/staffPage/StaffPage";
+import { SearchPage } from "./pages/SearchPage/SearchPage";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/Admin">
           <Adminpage />
+        </Route>
+        <Route path="/seachpage">
+          <SearchPage />
         </Route>
         <Route exact path="/">
           <Redirect to="/frontpage"></Redirect>

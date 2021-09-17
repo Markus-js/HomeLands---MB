@@ -72,9 +72,9 @@ export const Reviews = () => {
         </footer>
         {/* If user_id */}
         {loginData.user_id ? (
-          <button className="btn" onClick={() => {handleModal("review_kommentar")}}>Skriv kommentar</button>
+          <button className="btn btn--reviews" onClick={() => {handleModal("review_kommentar")}}>Skriv kommentar</button>
         ) : (
-          <button className="btn" onClick={() => {handleModal("review_login")}}>Login for at skrive en kommentar</button>
+          <button className="btn btn--reviews" onClick={() => {handleModal("review_login")}}>Login for at skrive en kommentar</button>
         )}
       </article>
       <Modal type={modalType} modalToggle={modalToggle} setModalToggle={setModalToggle} />

@@ -8,6 +8,13 @@ const AppContextProvider = ({children}) => {
     const [searchResult, setSearchResult] = useState([])
     const [ loginData, setLoginData ] = useState({});
     const [review, setReview] = useState([]);
+    const [refresh, setRefresh] = useState(false)
+    const [success, setSuccess] = useState(false)
+    const [reviewsDataById, setReviewsDataById] = useState({})
+    const [toggle, setToggle] = useState(false);
+    const [favorites, setFavorites] = useState(false);
+
+
 
     //  // first lifecycle => Set loginData to sessionStorage Token/User if it exist
     //  const settingLoginData = () => {
@@ -21,8 +28,9 @@ const AppContextProvider = ({children}) => {
 
     useEffect(() => {
         // settingLoginData();
-    }, []);
-
+        console.log(success)
+    }, [success]);
+    
 
     return (
         <AppContext.Provider
@@ -32,7 +40,17 @@ const AppContextProvider = ({children}) => {
             loginData,
             setLoginData,
             review,
-            setReview
+            setReview,
+            refresh,
+            setRefresh,
+            success,
+            setSuccess,
+            reviewsDataById,
+            setReviewsDataById,
+            setToggle,
+            toggle,
+            setFavorites,
+            favorites
         }}>
             {children}
         </AppContext.Provider>
