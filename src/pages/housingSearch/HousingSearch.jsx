@@ -4,13 +4,18 @@ import { HouseDetails } from "../../components/houseDetails/HouseDetails";
 import { HousesList } from "../../components/housesList/HousesList";
 import { HousesListSearch } from "../../components/housesList/HousesListSearch";
 import Style from "./housingSearch.module.scss";
+import { Helmet } from "react-helmet";
 
 export const HousingSearch = () => {
   let { url } = useRouteMatch();
 
   return (
     <>
-      <section >
+      <section>
+        <Helmet>
+          <title>Bolig søgning</title>
+          <meta name="Bolig udvalg" content="HomeLands - boliger" />
+        </Helmet>
         <Switch>
           <Route exact path={url}>
             <Redirect to={`${url}/houses`} />

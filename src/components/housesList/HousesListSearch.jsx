@@ -8,7 +8,7 @@ import { useRouteMatch } from "react-router-dom";
 import { HouseListContent } from "./HouseListContent";
 import { AppContext } from "../../Context/Context";
 import { ClearFix } from "../../components/ClearFix/ClearFix"
-
+import { Helmet } from "react-helmet";
 
 
 export const HousesListSearch = () => {
@@ -30,6 +30,10 @@ export const HousesListSearch = () => {
   return searchResult  ? (
     <>
     <section>
+    <Helmet>
+          <title>Bolig søgning</title>
+          <meta name="Bolig udvalg" content="HomeLands - boliger" />
+        </Helmet>
       <header className={Style.header}>
         <h2>Boliger til salg</h2>
         <p>
