@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { doFetch } from "../../helpers/Fetch";
+import { doFetch } from "../../Helpers/Fetch";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Style from "./houseDetails.module.scss";
@@ -7,7 +7,7 @@ import photo_icon from "../../assets/images/photo-icon.svg";
 import floorplan_icon from "../../assets/images/floorplan-icon.svg";
 import location_icon from "../../assets/images/location-icon.svg";
 import heart_icon from "../../assets/images/heart-icon.svg";
-import { Modal } from "../modal/Modal";
+import { Modal } from "../Modal/Modal";
 
 
 

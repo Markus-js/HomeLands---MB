@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Style from "./houseListContent.module.scss";
-import PriceRangeSlider from "../../components/priceRangeSlider/PriceRangeSlider";
-import { SelectHousingType } from "../../components/selectHousingType/SelectHousingType";
+import PriceRangeSlider from "../../components/PriceRangeSlider/PriceRangeSlider";
+import { SelectHousingType } from "../../components/SelectHousingType/SelectHousingType";
 import { useRouteMatch } from "react-router-dom";
 import { HouseListContent } from "./HouseListContent";
 import { AppContext } from "../../Context/Context";

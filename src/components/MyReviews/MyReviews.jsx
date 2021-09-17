@@ -1,8 +1,7 @@
-import { Refresh } from "@material-ui/icons";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../Context/Context";
-import { doFetch } from "../../helpers/Fetch";
-import { Modal } from "../modal/Modal";
+import { doFetch } from "../../Helpers/Fetch";
+import { Modal } from "../Modal/Modal";
 import Style from "./MyReviews.module.scss";
 
 export const MyReviews = () => {

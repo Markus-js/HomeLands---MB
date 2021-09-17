@@ -3,7 +3,6 @@ import { doFetch } from './Fetch';
 import Style from "./search.module.scss"
 import { AppContext } from '../Context/Context';
 import { useHistory } from "react-router";
-import {useRouteMatch} from "react-router-dom"
 
 
 export const Search = () => {

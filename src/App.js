@@ -1,18 +1,18 @@
 import { BrowserRouter as Router , Switch, Route, Redirect } from 'react-router-dom';
 import "./theme/globals.scss";
 // Global Component
-import { Layout } from "./components/layout/Layout";
+import { Layout } from "./components/Layout/Layout";
 // Components
-import {Frontpage} from './pages/frontpage/Frontpage';
-import { Loginpage } from './pages/Loginpage/Loginpage';
-import { Adminpage } from './pages/Adminpage/Adminpage';
+import { Frontpage } from './Pages/Frontpage/Frontpage';
+import { Loginpage } from './Pages/Loginpage/Loginpage';
+import { Adminpage } from './Pages/Adminpage/Adminpage';
 
 
 
 import {AppContextProvider} from './Context/Context';
-import { HousingSearch } from "./pages/housingSearch/HousingSearch";
-import { StaffPage } from "./pages/staffPage/StaffPage";
-import { SearchPage } from "./pages/SearchPage/SearchPage";
+import { HousingSearch } from "./Pages/HousingSearch/HousingSearch";
+import { StaffPage } from "./Pages/StaffPage/StaffPage";
+import { SearchPage } from "./Pages/SearchPage/SearchPage";
 
 function App() {
   return (

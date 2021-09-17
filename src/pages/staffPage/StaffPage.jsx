@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-import { StaffList } from "../../components/staff/StaffList";
-import { StaffDetails } from "../../components/staffDetails/StaffDetails";
+import { StaffList } from "../../components/Staff/StaffList";
+import { StaffDetails } from "../../components/StaffDetails/StaffDetails";
 import { Helmet } from "react-helmet";
 
 export const StaffPage = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { doFetch } from "../../helpers/Fetch";
+import { doFetch } from "../../Helpers/Fetch";
 import { Link } from "react-router-dom";
 import Style from "./houseListContent.module.scss";
 

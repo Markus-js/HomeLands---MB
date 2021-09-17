@@ -1,8 +1,8 @@
 import React from "react";
-import { Reviews } from "../../components/reviews/Reviews";
-import { StaffList } from "../../components/staff/StaffList";
-import { Slider } from "../../components/slider/Slider";
-import HouseListFrontpage from "../../components/housesList/HouseListFrontpage";
+import { Reviews } from "../../components/Reviews/Reviews";
+import { StaffList } from "../../components/Staff/StaffList";
+import { Slider } from "../../components/Slider/Slider";
+import HouseListFrontpage from "../../components/HousesList/HouseListFrontpage";
 import { Helmet } from "react-helmet";
 
 export const Frontpage = () => {

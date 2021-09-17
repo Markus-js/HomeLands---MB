@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Style from "./houseListContent.module.scss";
-import { doFetch } from "../../helpers/Fetch";
+import { doFetch } from "../../Helpers/Fetch";
 import { HouseListContent } from "./HouseListContent";
-import { ClearFix } from "../ClearFix/ClearFix";
 
 export default function HouseListFrontpage() {
   const [housesData, setHousesData] = useState([]);

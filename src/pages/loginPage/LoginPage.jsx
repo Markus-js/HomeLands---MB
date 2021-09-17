@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginForm } from "../../components/loginForm/LoginForm";
+import { LoginForm } from "../../components/LoginForm/LoginForm";
 import { ClearFix } from "../../components/ClearFix/ClearFix";
 import { Helmet } from "react-helmet";
 

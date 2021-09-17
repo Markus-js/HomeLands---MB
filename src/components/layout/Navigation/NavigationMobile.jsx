@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import Style from "./navigation.module.scss";
-import { Search } from "../../../helpers/Search";
+import { Search } from "../../../Helpers/Search";
 import { AppContext } from "../../../Context/Context";
 
 export const NavigationMobile = ({ navigationData }) => {

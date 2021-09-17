@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
-import {ModalSlider} from "./modalSlider/ModalSlider";
+import { ModalSlider } from "./ModalSlider/ModalSlider";
 import { Maps } from "../Maps/Maps";
-import {Form} from "../form/Form";
-import { LoginForm } from "../loginForm/LoginForm";
+import {Form} from "../Form/Form";
+import { LoginForm } from "../LoginForm/LoginForm";
 import { AppContext } from "../../Context/Context";
 import Style from "./modal.module.scss";
 import { CreateReview } from "../CreateReview/CreateReview";
-import {UpdateReview} from "../../components/UpdataReview/UpdateReview";
+import {UpdateReview} from "../UpdataReview/UpdateReview";
 
 export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) => {
   const { loginData, reviewsDataById, success, setSuccess } = useContext(AppContext);

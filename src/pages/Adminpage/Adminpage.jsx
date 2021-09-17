@@ -5,7 +5,6 @@ import { useEffect } from "react/cjs/react.development";
 import { AppContext } from "../../Context/Context";
 import Style from "./Adminpage.module.scss";
 
-import { EditReview } from "../../components/EditReview/EditReview";
 import { MyReviews } from "../../components/MyReviews/MyReviews";
 import { CreateReview } from "../../components/CreateReview/CreateReview";
 import { ClearFix } from "../../components/ClearFix/ClearFix";

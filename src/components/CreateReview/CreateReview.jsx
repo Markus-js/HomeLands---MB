@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../Context/Context';
-import {doFetch} from "../../helpers/Fetch";
+import {doFetch} from "../../Helpers/Fetch";
 import Style from "./createReview.module.scss"
 
 export const CreateReview = () => {

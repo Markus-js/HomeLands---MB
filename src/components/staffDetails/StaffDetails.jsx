@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { doFetch } from "../../helpers/Fetch";
+import { doFetch } from "../../Helpers/Fetch";
 import mail_icon from "../../assets/images/mail-icon.svg";
 import mobile_icon from "../../assets/images/mobile-icon.svg";
 import Style from "./staffDetails.module.scss";
-import { Modal } from "../modal/Modal";
+import { Modal } from "../Modal/Modal";
 
 export const StaffDetails = () => {
   const [agent, setAgent] = useState({});

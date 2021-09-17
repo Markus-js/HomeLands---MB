@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { doFetch } from "../../helpers/Fetch";
+import { doFetch } from "../../Helpers/Fetch";
 import Style from "./staff.module.scss";
 import { StaffCard } from "./StaffCard";
 

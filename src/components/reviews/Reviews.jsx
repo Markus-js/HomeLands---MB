@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import { doFetch } from "../../helpers/Fetch";
+import { doFetch } from "../../Helpers/Fetch";
 import Style from "./reviews.module.scss";
-import { Modal } from "../modal/Modal";
+import { Modal } from "../Modal/Modal";
 
 import { AppContext } from "../../Context/Context";
 

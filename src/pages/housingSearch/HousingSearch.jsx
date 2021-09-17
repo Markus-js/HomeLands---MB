@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-import { HouseDetails } from "../../components/houseDetails/HouseDetails";
-import { HousesList } from "../../components/housesList/HousesList";
+import { HouseDetails } from "../../components/HouseDetails/HouseDetails";
+import { HousesList } from "../../components/HousesList/HousesList";
 import { Helmet } from "react-helmet";
 
 export const HousingSearch = () => {

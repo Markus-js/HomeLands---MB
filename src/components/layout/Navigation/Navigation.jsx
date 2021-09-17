@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useContext } from "react";
 import { AppContext } from "../../../Context/Context";
 import { NavLink, useHistory } from "react-router-dom";
 import Style from "./navigation.module.scss";
-import { Search } from "../../../helpers/Search";
+import { Search } from "../../../Helpers/Search";
 import { NavigationMobile } from "./NavigationMobile";
 
 export const Navigation = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { HousesListSearch } from '../../components/housesList/HousesListSearch'
+import { HousesListSearch } from '../../components/HousesList/HousesListSearch'
 
 export const SearchPage = () => {
     return (

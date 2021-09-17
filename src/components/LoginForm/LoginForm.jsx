@@ -1,10 +1,10 @@
 import React, {useState, useEffect, useContext} from 'react';
 import Style from './loginForm.module.scss';
 
-import { doFetch } from '../../helpers/Fetch'; 
+import { doFetch } from '../../Helpers/Fetch'; 
 import { AppContext } from '../../Context/Context';
 import { useHistory } from 'react-router';
-import { useSetUserSessionStorage } from '../../hooks/useSetUserSessionStorage';
+import { useSetUserSessionStorage } from '../../Hooks/useSetUserSessionStorage';
 import { ClearFix } from '../ClearFix/ClearFix';
 
 // Prop => type drilled from = Reviews => Modal => this 
