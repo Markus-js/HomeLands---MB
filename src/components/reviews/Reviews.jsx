@@ -6,7 +6,7 @@ import { Modal } from "../modal/Modal";
 import { AppContext } from "../../Context/Context";
 
 export const Reviews = () => {
-  const { loginData, setLoginData } = useContext(AppContext);
+  const { loginData } = useContext(AppContext);
   const [review, setReview] = useState([]);
   const [count, setCount] = useState(review.length);
   const [modalToggle, setModalToggle] = useState(true);
@@ -34,14 +34,11 @@ export const Reviews = () => {
       }
     }, 4000);
 
-
     return () => {
       clearInterval(interval);
     };
   }, []);
 
-
-  
   const convertTime = (stamp) => {
     let string = new Date(stamp * 1000).toLocaleDateString("da-DK");
     return string;

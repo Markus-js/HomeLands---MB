@@ -12,7 +12,7 @@ const AppContextProvider = ({children}) => {
     const [success, setSuccess] = useState(false)
     const [reviewsDataById, setReviewsDataById] = useState({})
     const [toggle, setToggle] = useState(false);
-    const [favorites, setFavorites] = useState(false);
+    const [favorites, setFavorites] = useState([]);
 
 
 
