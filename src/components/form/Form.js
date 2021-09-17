@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { init } from "emailjs-com";
+import Style from "./form.module.scss";
 init("user_iKlFVYLk9kyYQV2fO6bD6");
 
 export const Form = ({ agent, setModalToggle }) => {
@@ -44,7 +45,7 @@ export const Form = ({ agent, setModalToggle }) => {
         "service_58zi6jz",
         "template_b9c11vh",
         e.target,
-        "user_iKlFVYLk9kyYQV2fO6bD6"
+        process.env.EMAIL_JS_API_KEY
       )
       .then(
         (result) => {
@@ -58,13 +59,16 @@ export const Form = ({ agent, setModalToggle }) => {
   }
 
   return (
-    <>
+    <section className={Style.form_section} >
+    <header>
     <h2>Kontakt {agent.item.firstname} {agent.item.lastname}</h2>
     {status && <h3>{status}</h3>}
+    </header>
     {status && status.includes("sendt") ? <h4>Lukker om: {count}</h4> : null}
-      <form onSubmit={sendEmail}>
+      <form className={Style.form} onSubmit={sendEmail}>
+        
         <div>
-          <label>Dit navn og efternavn:</label>
+          <label>Dit navn og efternavn</label>
           <input
             name="name"
             type="text"
@@ -74,7 +78,7 @@ export const Form = ({ agent, setModalToggle }) => {
           />
         </div>
         <div>
-          <label>Dit telefon nr.:</label>
+          <label>Dit telefon nr</label>
           <input
             name="tlf"
             type="number"
@@ -84,7 +88,7 @@ export const Form = ({ agent, setModalToggle }) => {
           />
         </div>
         <div>
-          <label>Din mailadresse:</label>
+          <label>Din mailadresse</label>
           <input
             name="user_email"
             type="email"
@@ -94,16 +98,16 @@ export const Form = ({ agent, setModalToggle }) => {
           />
         </div>
         <div>
-          <label>Din mailadresse:</label>
+          <label>Din mailadresse</label>
           <textarea
             name="message"
-            placeholder="Skriv et tal"
+            placeholder="EmailJS"
             onChange={(e) => setData({ ...data, text: e.target.value })}
             required
           ></textarea>
         </div>
-        <input type="submit" className="btn" />
+        <button type="submit" className="btn btn--contact" >Send besked</button>
       </form>
-    </>
+    </section>
   );
 };

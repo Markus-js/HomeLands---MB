@@ -3,7 +3,7 @@
 
 .agent_section {
   position: relative;
-  height: 80vh;
+  height: 81vh;
   .agent {
     position: absolute;
     bottom: 0%;
@@ -44,7 +44,9 @@
     width: 100%;
     padding: 3vh 10px 3vh 10px;
     background: $rose-bg-color;
-    
+    a {
+      color: $golden-color;
+    }
     &:last-child {
       justify-content: flex-end;
       padding-right: 10px;
@@ -87,7 +89,7 @@
     height: 100%;
     margin-bottom: 0vh;
     .agent {
-      bottom: 40%;
+      bottom: 35%;
       right: 0;
       width: 300px;
       opacity: 20%;
