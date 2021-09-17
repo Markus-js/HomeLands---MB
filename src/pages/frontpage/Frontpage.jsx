@@ -1,17 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { Reviews } from "../../components/reviews/Reviews";
 import { StaffList } from "../../components/staff/StaffList";
 import { Slider } from "../../components/slider/Slider";
-import Style from "./frontpage.module.scss";
 import HouseListFrontpage from "../../components/housesList/HouseListFrontpage";
 import { Helmet } from "react-helmet";
 
 export const Frontpage = () => {
-  return (
+  return ( 
     <>
       <Helmet>
-        <title>Forside</title>
-        <meta name="Forside" content="HomeLands - find din næste bolig" />
+        <title>HomeLands boligside</title>
+        <meta name="Forside" content="HomeLands | Bolig udvalg for alle smage |  Hjælp til at sælge og finde din drømme bolig" />
       </Helmet>
       <Slider />
       <HouseListFrontpage />

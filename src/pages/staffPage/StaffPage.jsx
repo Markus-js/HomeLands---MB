@@ -10,7 +10,7 @@ export const StaffPage = () => {
   return (
     <section>
       <Helmet>
-        <title>Forside</title>
+        <title>Ansatte</title>
         <meta name="Ansatte" content="HomeLands - find ejendomsmæglere" />
       </Helmet>
       <Switch>

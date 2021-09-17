@@ -10,6 +10,8 @@ export const Form = ({ agent, setModalToggle }) => {
   const [count, setCount ] = useState(4);
 
 
+
+
   
   useEffect(() => {
     const countExit = setInterval(() => {
@@ -26,6 +28,8 @@ export const Form = ({ agent, setModalToggle }) => {
 
 
 
+
+
   function handleExit() {
     // If response is successfull
     setStatus("Email blev sendt")
@@ -34,6 +38,9 @@ export const Form = ({ agent, setModalToggle }) => {
       setModalToggle(false);
     }, 4000);
   }
+
+
+
 
 
 
@@ -57,6 +64,8 @@ export const Form = ({ agent, setModalToggle }) => {
       );
     e.target.reset();
   }
+
+  
 
   return (
     <section className={Style.form_section} >

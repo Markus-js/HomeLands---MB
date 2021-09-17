@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext} from "react";
 import {ModalSlider} from "./modalSlider/ModalSlider";
 import { Maps } from "../Maps/Maps";
 import {Form} from "../form/Form";
@@ -7,7 +7,6 @@ import { AppContext } from "../../Context/Context";
 import Style from "./modal.module.scss";
 import { CreateReview } from "../CreateReview/CreateReview";
 import {UpdateReview} from "../../components/UpdataReview/UpdateReview";
-import { ClearFix } from "../ClearFix/ClearFix";
 
 export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) => {
   const { loginData, reviewsDataById, success, setSuccess } = useContext(AppContext);
@@ -18,6 +17,8 @@ export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) =
     setModalToggle(false);
   }
 
+
+
   const handleSuccesExit = () => {
     
     setTimeout(() => {
@@ -26,6 +27,9 @@ export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) =
     }, 1500);
   }
   
+
+
+
   return (
     <div>
       {modalToggle && type !== "" ? (
@@ -45,10 +49,9 @@ export const Modal = ({ type, agent, houseData, modalToggle, setModalToggle }) =
             {type === "review_login" && !loginData.user_id ? <LoginForm type={type} /> : null }
             {type === "review_kommentar" && loginData.user_id ? <CreateReview /> : null }
             {Number.isInteger(parseInt(type)) ? <UpdateReview reviewsDataById={reviewsDataById} /> : null }
-            
           </div>
+          
           <div
-            
             onClick={() => {
               handleExit();
             }}

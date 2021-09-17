@@ -2,18 +2,20 @@ import { useState, useEffect } from "react";
 import Geocode from "react-geocode";
 import GoogleMaps from "simple-react-google-maps";
 
+
+
 export const Maps = ({ houseData }) => {
   const [lat, setLat] = useState();
   const [lng, setLng] = useState();
   // set Google Maps Geocoding API for purposes of quota management. Its optional but recommended.
   Geocode.setApiKey("AIzaSyB_I-sikdqMynGNXRgnNhmZvCgHLMPSdrY");
-
   Geocode.setLanguage("en");
   Geocode.setRegion("dk");
   Geocode.setLocationType("ROOFTOP");
-
-  // Enable or disable logs. Its optional.
   Geocode.enableDebug();
+
+
+  
 
   // Get latitude & longitude from address.
  useEffect(() => {

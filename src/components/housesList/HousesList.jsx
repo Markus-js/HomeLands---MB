@@ -13,19 +13,36 @@ export const HousesList = () => {
   const [priceRange, setPriceRange] = useState([0, 5500000]);
   const [housingType, setHousingType] = useState("");
 
+
+
+
   // Bliver sendt med som prop => HouseListContent,
   // hvor der bliver målt på om linkes fra Front-page || House-list
   const pageIdentifier = "LIST_PAGE";
   let { url } = useRouteMatch();
+
+
+
+
+
 
   const gethousesData = async () => {
     const url = "https://api.mediehuset.net/homelands/homes";
     const res = await doFetch(url);
     setHousesData(res);
   };
+
+
+
+
+
   useEffect(() => {
     gethousesData();
   }, []);
+
+
+
+
 
   return (
     <>
@@ -48,6 +65,9 @@ export const HousesList = () => {
       <div className={Style.card_container}>
         {housesData.items &&
           housesData.items.map((item) => {
+
+
+
             let insulation_grade = item.energy_label_name;
             let price = parseInt(item.price).toFixed();
             if (price > priceRange[0] && price < priceRange[1]) {
@@ -55,6 +75,10 @@ export const HousesList = () => {
                 if (!item.type.toLowerCase().includes(housingType)) {
                   return null;
                 }
+
+
+
+                
 
                 return (
                   <HouseListContent

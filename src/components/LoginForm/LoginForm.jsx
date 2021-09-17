@@ -75,13 +75,12 @@ export const LoginForm = ({type}) => {
             <h2>Login</h2>
             <p >Indtast dit brugernavn og adgangskode for at logge ind</p>
             <span>
-                <input  type="text" placeholder="Brugernavn" onKeyUp={(e) => {handleUsername(e.currentTarget.value)}}/> 
-                <input  type="password" placeholder="Adgangskode" onKeyUp={(e) => {handlePassword(e.currentTarget.value)}}/> 
+                <input className={Style.Login_input} type="text" placeholder="Brugernavn" onKeyUp={(e) => {handleUsername(e.currentTarget.value)}}/> 
+                <input  className={Style.Login_input} type="password" placeholder="Adgangskode" onKeyUp={(e) => {handlePassword(e.currentTarget.value)}}/> 
             </span>
             {message}
             <div >
                 <button type="button" className="btn btn--login" onClick={submitForm}>Login</button>
-           
             </div>
         
         </form>

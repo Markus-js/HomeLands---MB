@@ -7,18 +7,30 @@ import { ClearFix } from "../ClearFix/ClearFix";
 export default function HouseListFrontpage() {
   const [housesData, setHousesData] = useState([]);
 
+
+
   // Bliver sendt med som prop => HouseListContent, 
   // hvor der bliver målt på om linkes fra Front-page || House-list
   const pageIdentifier = "FRONT_PAGE";
+
+
+
 
   const gethousesData = async () => {
     const url = "https://api.mediehuset.net/homelands/homes";
     const res = await doFetch(url);
     setHousesData(res);
   };
+
+
+
+
   useEffect(() => {
     gethousesData();
   }, []);
+
+
+
 
 
   return (
@@ -27,7 +39,13 @@ export default function HouseListFrontpage() {
         {housesData.items &&
           housesData.items.map((item, i) => {
             let insulation_grade = item.energy_label_name;
+
+
+
             if (i < 3) {
+
+
+              
               return (
                 <HouseListContent
                   key={item.id}

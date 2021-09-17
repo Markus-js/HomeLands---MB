@@ -7,31 +7,47 @@ import photo_icon from "../../assets/images/photo-icon.svg";
 import floorplan_icon from "../../assets/images/floorplan-icon.svg";
 import location_icon from "../../assets/images/location-icon.svg";
 import heart_icon from "../../assets/images/heart-icon.svg";
-
 import { Modal } from "../modal/Modal";
+
+
 
 export const HouseDetails = () => {
   const [houseData, setHouseData] = useState({});
   const [modalToggle, setModalToggle] = useState(true);
   const [modalType, setModalType] = useState("");
 
+
   let { houseId } = useParams();
+
+
 
   const getHouseData = async () => {
     const url = `https://api.mediehuset.net/homelands/homes/${houseId}`;
     const res = await doFetch(url);
     setHouseData(res);
   };
+
+
+
+
+
   useEffect(() => {
     getHouseData();
   }, []);
-  console.log(houseData);
+  
+
+
+
 
   const handleModal = (type) => {
     setModalType(type);
     setModalToggle(true);
   };
 
+
+
+
+  
   return houseData.item ? (
     <section className={Style.parent_body}>
       <header className={Style.parent_body__header}>

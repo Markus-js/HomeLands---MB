@@ -11,6 +11,9 @@ export const Navigation = () => {
   const {toggle, setToggle} = useContext(AppContext)
   const history = useHistory();
 
+
+
+  
   const navigationData = {
     forside: {
       title: "Forside",
@@ -26,14 +29,20 @@ export const Navigation = () => {
     },
   };
 
+
+
   const handlePushFrontpage = () => {
     history.push("/frontpage");
   };
 
-  //
+  
+
+
   const handleToggle = () => {
     setToggle((toggle) => !toggle);
   };
+
+
 
   return (
     <>

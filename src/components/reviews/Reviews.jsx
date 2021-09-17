@@ -12,6 +12,8 @@ export const Reviews = () => {
   const [modalToggle, setModalToggle] = useState(true);
   const [modalType, setModalType] = useState("");
 
+
+
   if (count === review.length - 1) setCount(0);
 
 
@@ -39,6 +41,8 @@ export const Reviews = () => {
     };
   }, []);
 
+
+
   const convertTime = (stamp) => {
     let string = new Date(stamp * 1000).toLocaleDateString("da-DK");
     return string;
@@ -49,6 +53,8 @@ export const Reviews = () => {
     setModalType(type)
     setModalToggle(true)
   }
+
+
 
   // > length 
   return review.length > 0 && count >= 0 ? (

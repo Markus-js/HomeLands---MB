@@ -5,10 +5,14 @@ import Style from "./staff.module.scss";
 export const StaffCard = ({data}) => {
     const [hover, setHover] = useState(false);
 
+
+
     const handleHover = (boolean) => {
         setHover(boolean);
-        
       };
+
+
+      
     return (
         <Link to={`/staffPage/${data.firstname}/${data.id}`} key={data.id}>
               <figure

@@ -110,6 +110,15 @@ img {
   &--login {
     margin-top: 20px;
     width: 100px;
+    height: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &--logout {
+    background: red;
+    border: solid 1px red;
   }
   &--admin {
     padding: 10px ;

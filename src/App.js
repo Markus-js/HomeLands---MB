@@ -1,3 +1,4 @@
+import { BrowserRouter as Router , Switch, Route, Redirect } from 'react-router-dom';
 import "./theme/globals.scss";
 // Global Component
 import { Layout } from "./components/layout/Layout";
@@ -5,8 +6,7 @@ import { Layout } from "./components/layout/Layout";
 import {Frontpage} from './pages/frontpage/Frontpage';
 import { Loginpage } from './pages/Loginpage/Loginpage';
 import { Adminpage } from './pages/Adminpage/Adminpage';
-//
-import { BrowserRouter as Router , Switch, Route, Redirect } from 'react-router-dom';
+
 
 
 import {AppContextProvider} from './Context/Context';

@@ -13,26 +13,40 @@ export const StaffDetails = () => {
   // const [modalToggle, setModalToggle] = useState(true);
   // const [modalType, setModalType] = useState("");
 
+
+  
   let { staffId } = useParams();
   let history = useHistory()
+
+
 
   const getStaffDetails = async () => {
     const url = `https://api.mediehuset.net/homelands/staff/${staffId}`;
     const res = await doFetch(url);
     setAgent(res);
   };
+
+
   useEffect(() => {
     getStaffDetails();
   }, []);
+
+
 
   const handleModal = (type) => {
     setModalType(type)
     setModalToggle(true)
 }
 
+
+
+
 const handleClick = () => {
     history.push("/staffPage")
 }
+
+
+
 
   return agent.item ? (
      <> 

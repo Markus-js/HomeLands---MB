@@ -9,6 +9,8 @@ import { EditReview } from "../../components/EditReview/EditReview";
 import { MyReviews } from "../../components/MyReviews/MyReviews";
 import { CreateReview } from "../../components/CreateReview/CreateReview";
 import { ClearFix } from "../../components/ClearFix/ClearFix";
+import { UpdateReview } from "../../components/UpdataReview/UpdateReview";
+import { Helmet } from "react-helmet";
 
 export const Adminpage = () => {
   const { loginData, setLoginData } = useContext(AppContext);
@@ -27,21 +29,23 @@ export const Adminpage = () => {
 
   return (
       <>
+       <Helmet>
+        <title>Admin</title>
+        <meta name="Admin" content="Admin panel" />
+      </Helmet>
     <section className={Style.admin}>
-      
-
         <main>
           <header>
             <h3>Anmeldelser</h3>
           </header>
           <MyReviews />
-          <EditReview />
+          <UpdateReview />
           <CreateReview />
           <footer>
             <p>
               Du er nu logget ind som <strong>{loginData.username}</strong>
             </p>
-            <button onClick={handleLogout} type="button">
+            <button className="btn btn--logout" onClick={handleLogout} type="button">
               Logud
             </button>
           </footer>
