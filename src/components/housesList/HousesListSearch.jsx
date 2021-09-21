@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import Style from "./houseListContent.module.scss";
-import PriceRangeSlider from "../../components/PriceRangeSlider/PriceRangeSlider";
-import { SelectHousingType } from "../../components/SelectHousingType/SelectHousingType";
+import PriceRangeSlider from "../PriceRangeSlider/PriceRangeSlider";
+import { SelectHousingType } from "../SelectHousingType/SelectHousingType";
 import { useRouteMatch } from "react-router-dom";
 import { HouseListContent } from "./HouseListContent";
 import { AppContext } from "../../Context/Context";
-import { ClearFix } from "../../components/ClearFix/ClearFix";
+import { ClearFix } from "../ClearFix/ClearFix";
 import { Helmet } from "react-helmet";
 
 export const HousesListSearch = () => {

@@ -4,7 +4,7 @@ import "./theme/globals.scss";
 import { Layout } from "./components/Layout/Layout";
 // Components
 import { Frontpage } from './Pages/Frontpage/Frontpage';
-import { Loginpage } from './Pages/Loginpage/Loginpage';
+import { Loginpage } from './Pages/LoginPage/LoginPage';
 import { Adminpage } from './Pages/Adminpage/Adminpage';
 
 

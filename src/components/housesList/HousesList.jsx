@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { doFetch } from "../../Helpers/Fetch";
 import Style from "./houseListContent.module.scss";
 
-import PriceRangeSlider from "../../components/PriceRangeSlider/PriceRangeSlider";
-import { SelectHousingType } from "../../components/SelectHousingType/SelectHousingType";
+import PriceRangeSlider from "../PriceRangeSlider/PriceRangeSlider";
+import { SelectHousingType } from "../SelectHousingType/SelectHousingType";
 import { useRouteMatch } from "react-router-dom";
 import { HouseListContent } from "./HouseListContent";
-import { ClearFix } from "../../components/ClearFix/ClearFix"
+import { ClearFix } from "../ClearFix/ClearFix"
 
 export const HousesList = () => {
   const [housesData, setHousesData] = useState([]);
