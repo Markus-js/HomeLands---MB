@@ -10,7 +10,7 @@ import { CreateReview } from "../../components/CreateReview/CreateReview";
 import { ClearFix } from "../../components/ClearFix/ClearFix";
 import { UpdateReview } from "../../components/UpdataReview/UpdateReview";
 import { Helmet } from "react-helmet";
-
+//FIX
 export const Adminpage = () => {
   const { loginData, setLoginData } = useContext(AppContext);
   const history = useHistory();
