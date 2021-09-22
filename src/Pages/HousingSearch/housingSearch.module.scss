@@ -1,0 +1,13 @@
+@import "../../theme/breakpoints.scss";
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .container {
+        padding-bottom: 50vh;
+    }
+  }
+  
+  @media only screen and (max-width: $breakpoint-xs) {
+    .container {
+        padding-bottom: 50vh;
+    }
+  }
