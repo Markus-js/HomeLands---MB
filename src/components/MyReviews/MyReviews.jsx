@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../Context/Context";
 import { doFetch } from "../../Helpers/Fetch";
 import { Modal } from "../Modal/Modal";
-import Style from "./MyReviews.module.scss";
+import Style from "./myReviews.module.scss";
 
 export const MyReviews = () => {
   const [reviews, setReviews] = useState([]);

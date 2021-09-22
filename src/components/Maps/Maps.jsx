@@ -37,7 +37,7 @@ export const Maps = ({ houseData }) => {
   return lat ? (
     <>
       <GoogleMaps
-      apiKey={process.env.GOOGLE_MAPS_API_KEY}
+      apiKey="AIzaSyB_I-sikdqMynGNXRgnNhmZvCgHLMPSdrY"
       style={{height: "100%", width: "100%"}}
       zoom={10}
       center={{lat: lat, lng: lng}}

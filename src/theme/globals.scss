@@ -1,0 +1,159 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./mixins.scss";
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  position: relative;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: apple-system , BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  // compensate from Navigation    
+  margin-top: 10vh;
+
+}
+h1, 
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-main;
+}
+.title {
+  text-align: center;
+}
+p{
+  color: $main-text-color;
+  font-size: clamp(0.8rem, 2.5vw, 1rem); 
+  font-family: $font-main;
+}
+
+span{
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  color: white;
+}
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: red;
+}
+.sm {
+  margin-bottom: 10vh;
+}
+.md {
+  margin-bottom: 50vh;
+}
+.lg {
+  margin-bottom: 90vh;
+}
+
+
+// @mixin energyType($color) {
+//   background-color: $color;
+//   width: 20px;
+//   height: 20px;
+//   @include center
+// }
+.A {
+  @include energyType(green)
+}
+.B {
+  @include energyType(yellowgreen)
+}
+.C {
+  @include energyType(yellow)
+}
+.D {
+  @include energyType(orange)
+}
+.E {
+  @include energyType(orangered)
+}
+.F {
+  @include energyType(red)
+}
+.A,.B,.C,.D,.E,.F {
+  color: $white-color;
+}
+
+img {
+  max-width: 100%;
+}
+.btn{
+  padding: 20px 10px;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  border: 1px solid $btn-color;
+  background: $btn-color;
+  cursor: pointer;
+  &--reviews {
+    max-width: 250px;
+    display: flex;
+    margin: 0 auto;
+  }
+  &--login {
+    margin-top: 20px;
+    width: 100px;
+    height: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &--logout {
+    background: red;
+    border: solid 1px red;
+  }
+  &--admin {
+    padding: 10px ;
+    width: 100px;
+    margin-right: 10px;
+  }
+}
+input, textarea {
+  border: 1px solid rgba(160, 160, 160, 0.281);
+  background-color: #fff !important;
+  outline: none;
+  padding: 11px;
+}
+textarea {
+  max-height: 50px;
+  width: 338px;
+}
+
+
+// SLET EFTERFØLGENDE
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+}
+// other modals z-index 10
+// slider modal z-index 12
+// layer so that they don´t conflict, when closing
+.carousel-overlay {
+  z-index: 11;
+}
+
