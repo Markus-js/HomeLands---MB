@@ -1,0 +1,136 @@
+@import "../../theme/colors.scss";
+@import "../../theme/breakpoints.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  align-content: flex-end;
+  justify-content: flex-end;
+  height: 20px;
+  margin: 5vw;
+  h2 {
+    position: absolute;
+    left: 5vw;
+  }
+  .range {
+    padding-top: 8px;
+    margin: 0 40px;
+  }
+  
+}
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  color: #fff;
+  
+  margin:  5vw;
+  &__card {
+    height: 100%;
+    position: relative;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: $transparrent-bg-color;
+    box-shadow: 0px 3px 4px 1px #dddddd;
+    &__imgbox {
+      img {
+        width: 100%;
+        height: 100px;
+        min-height: 150px;
+        max-height: 350px;
+        object-fit: cover;
+      }
+    }
+    &__desc {
+      h2 {
+        font-size: clamp(1rem, 1.5vw, 2rem);
+      }
+      h3 {
+        font-size: clamp(1rem, 1.5vw, 2rem);
+        margin: 0;
+      }
+      p {
+       
+        margin: 0;
+        margin-top: 5px;
+      }
+      p:first-of-type {
+        font-weight: bolder;
+      }
+
+      &__footer {
+        // Energy_type in globals.scss
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        h3 {
+          color: #333;
+
+        }
+      }
+    }
+  }
+}
+.outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  border: solid 1px rgba(128, 128, 128, 0.514);
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+    background: $purple-hover-color;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .card_container {
+      grid-template-columns: repeat(2, 1fr);
+      margin:  5vw;
+      &__card {
+        &__imgbox {
+          img {
+            width: 100%;
+            height: 100px;
+            min-height: 200px;
+            max-height: 300px;
+          }
+        }
+      }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .card_container {
+    margin: 5vw;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: flex-end;
+    height: 20px;
+    margin: 5vw;
+    h2 {
+      position: absolute;
+      left: 5vw;
+    }
+    .range {
+      padding-top: 8px;
+      margin: 0 0;
+    }
+    
+  }
+}
+
+@media only screen and (max-width: $breakpoint-xs) {
+  .card_container {
+    grid-template-columns: 1fr;
+    margin: 10vw;
+  }
+}
