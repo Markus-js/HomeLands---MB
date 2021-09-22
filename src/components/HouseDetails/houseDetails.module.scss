@@ -1,0 +1,201 @@
+@import "../../theme/breakpoints.scss";
+@import "../../theme/colors.scss";
+
+.parent_body {
+  padding-bottom: 20vh;
+  margin-top: 25vh;
+  &__header {
+    width: 100%;
+    &__img {
+      position: absolute;
+      z-index: -999;
+      top: 0;
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+    }
+  }
+}
+
+.details_container {
+  margin: 5vw;
+  background: $transparrent-bg-color;
+  border-radius: 2px;
+  padding: 2% 3%;
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    h2 {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    &__house_details {
+    }
+
+    &__house_economics {
+      &__col {
+        display: flex;
+        align-items: center;
+        h2,
+        p {
+          padding: 0;
+          margin: 0;
+        }
+        h2 {
+          margin-left: 15px;
+        }
+      }
+    }
+    &__information_board {
+      display: flex;
+      justify-content: space-between;
+      &__icon {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+        border-radius: 50%;
+        border: 1px solid #707070;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.897);
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  .details_container__house_stats {
+    &__box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      &__row {
+        margin: 20px;
+        div {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .details_container__description_section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    article {
+      width: 50%;
+    }
+    footer {
+      width: 20%;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .parent_body {
+    margin-bottom: 25vw;
+    .details_container {
+      &__header {
+        display: flex;
+        flex-direction: row;
+        &__house_details {
+          margin-top: 40px;
+        }
+        &__house_economics {
+          margin-top: 40px;
+        }
+        &__information_board {
+          justify-content: space-evenly;
+          position: absolute;
+          top: -25%;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-xs) {
+  .parent_body {
+    padding-bottom: 0;
+    .details_container {
+      margin-bottom: 35vw;
+
+      &__header {
+        flex-direction: column;
+        &__house_details {
+          margin-top: 20px;
+        }
+        &__house_economics {
+          margin-top: 10px;
+        }
+        &__information_board {
+          justify-content: space-evenly;
+          position: absolute;
+          top: -16%;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+    .details_container__house_stats {
+      &__box {
+        display: grid;
+        grid-template-columns: 1fr;
+  
+        &__row {
+          
+          div:nth-child(even) {
+            background: rgb(211, 211, 211);
+          }
+          div {
+            padding: 5px;
+            display: flex;
+            p {
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    .details_container__description_section {
+      margin-bottom: 10vh;
+      display: block;
+      justify-content: space-between;
+      gap: 40px;
+      article {
+        width: 100%;
+      }
+      footer {
+        margin-top: 50px;
+        h2, p:first-of-type {
+          margin-top: 0;
+        }
+        width: 100%;
+        .link {
+          display: flex;
+          justify-content: space-between;
+        }
+        .img_box {
+          width: 500;
+          height: auto;
+          img {
+            object-fit: contain;
+          }
+        }
+
+      }
+    }
+  
+  }
+}
